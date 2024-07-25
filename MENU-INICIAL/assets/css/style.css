@@ -1,0 +1,133 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Courier New', Courier, monospace;
+    box-sizing: border-box; /* Garante que padding e border não aumentem o tamanho do elemento */
+}
+
+body {
+    overflow-x: hidden; /* Para esconder a barra de rolagem horizontal ao abrir o menu */
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgb(0, 81, 255);
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    z-index: 1000; /* Garante que o cabeçalho esteja acima de tudo */
+}
+
+#menu-toggle {
+    background-color: rgb(0, 81, 255);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Transição suave para a cor de fundo */
+}
+
+#menu-toggle:hover {
+    background-color: green; /* Mudando a cor de fundo ao passar o mouse */
+}
+
+#menu {
+    position: fixed;
+    top: 0;
+    left: -200px; /* Posiciona o menu fora da tela à esquerda */
+    width: 200px;
+    height: 100%;
+    background-color: rgba(0, 81, 255, 0.9); /* Fundo semi-transparente */
+    z-index: 900; /* Abaixo do conteúdo principal, mas acima da janela lateral */
+    transition: left 0.3s ease; /* Transição suave para o movimento */
+}
+
+#menu.open {
+    left: 0; /* Mostra o menu movendo para a esquerda */
+}
+
+#menu ul {
+    list-style: none;
+    padding: 20px;
+}
+
+#menu ul li {
+    margin-bottom: 10px;
+}
+
+#menu ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s ease; /* Transição suave para a cor do texto */
+}
+
+#menu ul li a:hover {
+    color: green; /* Mudando a cor do texto ao passar o mouse */
+}
+
+.background {
+    background-image: url('https://e1.pxfuel.com/desktop-wallpaper/582/225/desktop-wallpaper-beautiful-landscape-of-scottish-nature-landscape.jpg'); /* Substitua pelo caminho da sua imagem */
+    background-size: cover; /* Para cobrir toda a área da seção */
+    background-position: center; /* Para centralizar a imagem */
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    z-index: 0; /* Garante que o fundo esteja abaixo de tudo */
+}
+
+#menu-info {
+    position: fixed;
+    top: 0;
+    right: -100%; /* Esconde a janelinha ao lado por padrão */
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5); /* Fundo semi-transparente */
+    z-index: 800; /* Abaixo do menu, mas acima do conteúdo principal */
+    transition: right 0.3s ease; /* Transição suave para a posição */
+    overflow-y: auto; /* Adiciona rolagem vertical quando necessário */
+}
+
+#menu-info.open {
+    right: 0; /* Mostra a janelinha ao mover para a direita */
+}
+body {
+    overflow-x: hidden; /* Para esconder a barra de rolagem horizontal ao abrir o menu */
+}
+
+#intro-text {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: 100%;
+    opacity: 0;
+    transition: transform 0.5s ease, opacity 0.5s ease;
+    z-index: 1000;
+}
+
+#intro-text.show {
+    transform: translate(-50%, -80%);
+    opacity: 1;
+}
+
+#intro-link {
+    text-decoration: none;
+    color: white;
+    font-size: 80px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    border-bottom: 1px solid transparent; /* Para esconder a borda padrão de link */
+}
+
+#intro-link:hover {
+    color: green;
+    border-bottom: 1px solid green; /* Mostrar borda ao passar o mouse */
+}
+
